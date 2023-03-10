@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orange Search Engine</title>
     <link href="css/style.css" rel="stylesheet" >
+    <link href="css/normalize.css" rel="stylesheet" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
+        
         <img src="images/logo.svg" alt="">
         <ul>
             <li><a href="#">Benefits</a></li>
@@ -21,15 +26,37 @@
 
     <!-- Inicio do conteudo principal -->
 
-    <div>
+    <div class="content">
         <div id="mockup"></div>
-    </div>
+    
 
-    <div>
+    
+    <div id="section"> 
         <form action="">
-            <input type="text" placeholder="search the web">
-            <input type="submit" value="">
+            <input id="search-field" type="text" placeholder="search the web">
+            <input id="clear-button" type="reset" value="">
+            <input id="search-button" type="submit" value="">
         </form>
+
+        <script type="text/javascript">
+            var resetb =  document.getElementById("clear-button");
+            var offcansearch = document.getElementById('search-field');
+            
+            offcansearch.addEventListener('keyup', function() {
+            var searchSminput = offcansearch.value.length;
+            if (searchSminput == 0) {
+                resetb.style.display = "none";
+            } else {
+                resetb.style.display = "block";
+            }
+            });
+            
+            resetb.addEventListener('click', function() {
+            resetb.style.display = "none";
+            offcansearch.focus();
+            });
+
+        </script>
 
         <h1>Tired of your data being squeezed? 
             Here to help!</h1>
@@ -40,9 +67,9 @@
                 <li><img src="images/check-icon.svg" alt=""> Tracker Blocking</li>
                 <li><img src="images/check-icon.svg" alt=""> Site Encryption</li>
             </ul>
-            <div>
+            <div class="download">
                 <button><a href="#">Download now</a></button>
-                <div>
+                <div class="rating">
                     <img src="images/star-icon.svg" alt="">
                     <img src="images/star-icon.svg" alt="">
                     <img src="images/star-icon.svg" alt="">
@@ -52,6 +79,9 @@
                 </div>
             </div>
     </div>
+
+</div>
+
 <footer>Privacy for everyone</footer>
 
 
